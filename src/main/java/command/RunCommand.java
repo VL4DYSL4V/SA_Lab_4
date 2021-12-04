@@ -55,6 +55,7 @@ public class RunCommand extends DefaultRunCommand {
     }
 
     private boolean isAsymptoticallyStable(RealMatrix raussMatrix) {
+        ValidationUtils.requireNonNull(raussMatrix);
         double[] zeroColumn = raussMatrix.getColumn(0);
         for (double d : zeroColumn) {
             if (d <= 0) {
