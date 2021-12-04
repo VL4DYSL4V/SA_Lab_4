@@ -39,23 +39,18 @@ public class LaboratoryState extends AbstractApplicationState {
                 {1.1, -1.5, -3.1}
         }));
         this.variableNameToGetter.put("6", () -> new Array2DRowRealMatrix(new double[][]{
-                {-4, 0.5, 0.7, -1.2},
-                {1, -6, 1, 1},
-                {0.5, 1, -3.8, 3},
-                {1.5, 0, 1.5, -4.5}
-        }));
-        this.variableNameToGetter.put("7", () -> new Array2DRowRealMatrix(new double[][]{
                 {-2, 0.1, 0.3, -0.4, 0},
                 {0.3, -2.9, -0.5, 0.4, 0.1},
                 {0.2, -0.5, -1.8, 1.5, 0.2},
                 {0, 1, 0, -2, 0.6},
                 {-1, 0, 0.1, 0, -1.3}
         }));
-        this.variableNameToGetter.put("8", () -> new Array2DRowRealMatrix(new double[][]{
-                {-5.5, -2, 0.2, -31},
-                {0.3, -3.1, 2.1, -0.1},
-                {0.5, 3.4, -4.0, 0},
-                {0.1, -0.3, 1.4, -2.1}
+        this.variableNameToGetter.put("7", () -> new Array2DRowRealMatrix(new double[][]{
+                {-5.5, -2, 0.2, -3.1, 17.9},
+                {0.3, -3.1, 2.1, -0.1, 0},
+                {0.5, 3.4, -4.0, 0, 2.1},
+                {0.1, -0.3, 1.4, -2.1, 8.1},
+                {1, 1.4, 18.5, 9.2, 7.7},
         }));
     }
 
