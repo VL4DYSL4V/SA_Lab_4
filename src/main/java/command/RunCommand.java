@@ -20,7 +20,7 @@ public class RunCommand extends DefaultRunCommand {
             Map<String, String> args = this.parseArgs(strings);
             String variant = args.get(VAR);
             ValidationUtils.requireBetweenClosed(
-                    Integer.parseInt(variant), 1, 8, "var must be in [1, 8]");
+                    Integer.parseInt(variant), 1, 7, "var must be in [1, 7]");
             RealMatrix matrix = (RealMatrix) applicationState.getVariable(variant);
             executeLaboratory(matrix);
         } catch (Exception e) {
