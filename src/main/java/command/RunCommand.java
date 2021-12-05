@@ -48,7 +48,7 @@ public class RunCommand extends DefaultRunCommand {
 
         boolean asymptoticallyStable = isAsymptoticallyStable(raussMatrix);
         if (asymptoticallyStable) {
-            ConsoleUtils.println(String.format("%nSystem is asymptotic stable%n"));
+            ConsoleUtils.println(String.format("%nSystem is asymptotically stable%n"));
         } else {
             ConsoleUtils.println(String.format("%nSystem is not asymptotically stable%n"));
         }
