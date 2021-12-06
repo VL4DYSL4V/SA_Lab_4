@@ -41,17 +41,26 @@ public class RunCommand extends DefaultRunCommand {
         ConsoleUtils.printMatrix(matrix, 3);
 
         List<Double> coefficients = getCharacteristicEquationCoefficients(matrix);
-        RealMatrix raussMatrix = getRaussMatrix(coefficients);
+        ConsoleUtils.println(String.format("%nCharacteristic equation coefficients:%n"));
+        ConsoleUtils.println(convertCoefficientsToString(coefficients, 3));
 
+        RealMatrix raussMatrix = getRaussMatrix(coefficients);
         ConsoleUtils.println(String.format("%nRauss's matrix:%n"));
         ConsoleUtils.printMatrix(raussMatrix, 3);
 
         boolean asymptoticallyStable = isAsymptoticallyStable(raussMatrix);
-        if (asymptoticallyStable) {
-            ConsoleUtils.println(String.format("%nSystem is asymptotically stable%n"));
-        } else {
-            ConsoleUtils.println(String.format("%nSystem is not asymptotically stable%n"));
+        String notPart = asymptoticallyStable ? " " : " not ";
+        ConsoleUtils.println(String.format("%nSystem is%sasymptotically stable%n", notPart));
+    }
+
+    private String convertCoefficientsToString(List<? extends Double> coefficients, int numbersAfterPoint) {
+        StringBuilder out = new StringBuilder();
+        String template = String.format("%%.%df ", numbersAfterPoint);
+        for (Double d : coefficients) {
+            out.append(String.format(template, d));
         }
+        out.deleteCharAt(out.length() - 1);
+        return out.toString();
     }
 
     private boolean isAsymptoticallyStable(RealMatrix raussMatrix) {
